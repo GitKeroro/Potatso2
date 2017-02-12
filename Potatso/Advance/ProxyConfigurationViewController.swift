@@ -102,7 +102,7 @@ class ProxyConfigurationViewController: FormViewController {
             <<< PushRow<String>(kProxyFormEncryption) {
                 $0.title = "Encryption".localized()
                 $0.options = Proxy.ssSupportedEncryption
-                $0.value = self.upstreamProxy.authscheme ?? $0.options[2]
+                $0.value = self.upstreamProxy.authscheme ?? $0.options[5]
                 $0.selectorTitle = "Choose encryption method".localized()
                 $0.hidden = Condition.function([kProxyFormType]) { form in
                     if let r1 : PushRow<ProxyType> = form.rowByTag(kProxyFormType), let isSS = r1.value?.isShadowsocks {
@@ -178,7 +178,7 @@ class ProxyConfigurationViewController: FormViewController {
                 throw "Name can't be empty".localized()
             }
             if !self.isEdit {
-                if let _ = defaultRealm.objects(Proxy).filter("name = '\(name)'").first {
+                if let _ = defaultRealm.objects(Proxy.self).filter("name = '\(name)'").first {
                     throw "Name already exists".localized()
                 }
             }

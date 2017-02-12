@@ -101,7 +101,7 @@ class HomePresenter: NSObject {
 
     func addRuleSet() {
         let destVC: UIViewController
-        if defaultRealm.objects(RuleSet).count == 0 {
+        if defaultRealm.objects(RuleSet.self).count == 0 {
             destVC = RuleSetConfigurationViewController() { [unowned self] ruleSet in
                 self.appendRuleSet(ruleSet)
             }
