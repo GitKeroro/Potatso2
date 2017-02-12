@@ -12,7 +12,17 @@
 
 + (NSString *) sharedGroupIdentifier {
     // this will return the main application's bundle identifier, not the target that this source file lives under
-    return [NSString stringWithFormat:@"group.%@", [[NSBundle mainBundle] bundleIdentifier]];
+//    if ([[NSString stringWithFormat:@"group.%@", [[NSBundle mainBundle] bundleIdentifier]] isEqualToString: [NSString stringWithFormat:@"group.com.jefby.potatso"]]) {
+//        NSLog(@"sharedGroupIdentifier is equal");
+//    }else{
+//        NSLog(@"sharedGroupIdentifier is different");
+//        NSLog(@"sharedGroupIdentifier is %@",[NSString stringWithFormat:@"group.%@", [[NSBundle mainBundle] bundleIdentifier]]);
+//
+//    }
+//    return [NSString stringWithFormat:@"group.%@", [[NSBundle mainBundle] bundleIdentifier]];
+
+    return [NSString stringWithFormat:@"group.com.jefby.potatso"];
+
 }
 
 + (NSURL *)sharedUrl {
